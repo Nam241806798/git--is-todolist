@@ -18,21 +18,40 @@ function newElement() {
 	}
 	document.getElementById("input__value").value = "";
 	var bts = document.createElement('button');
-	var txt = document.createTextNode("X");
+	var txt = document.createTextNode("V");
+	var bts__choose = document.createElement('button');
+	var check = document.createTextNode("X");
+	bts__choose.type = "checkbox";
+	bts__choose.name = "check__succes";
 	bts.name = "button__succes";
 	bts.appendChild(txt);
-	li.appendChild(bts)
+	li.appendChild(bts);
+	bts__choose.appendChild(check);
+	li.appendChild(bts__choose);
 	var button = document.getElementsByName('button__succes');
 	for (var i = 0; i < button.length; i++) {
    
 		button[i].addEventListener("click", function () {
 			var parents = this.parentElement;
+			parents.style="color:rgb(38, 189, 189)";
 			
+			
+		})		
+	}
+	var succes = document.getElementsByName('check__succes');
+	for (var i = 0; i < button.length; i++) {
+   
+		succes[i].addEventListener("click", function () {
+			var parents = this.parentElement;
 			parents.remove();
 			
-		})
 			
+		})		
 	}
+	
+	
+		
+	
 	
 }
 
